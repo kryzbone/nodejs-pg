@@ -1,0 +1,63 @@
+get http://localhost:5000/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjM4OTUyNDY2LCJleHAiOjE2MzkwMzg4NjZ9.N9Cfjzcvm8M6eP9d9-q61XZQVTeCURUNiGb6hMkKI3o
+
+
+###
+post http://localhost:5000/api/user/register
+Content-Type: application/json
+
+{
+   "username": "jane",
+   "email": "a@a.com",
+   "password": "123456"
+}
+
+
+###
+post http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{
+   "email": "a@a.com",
+   "password": "123456"
+}
+
+
+
+###
+post http://localhost:5000/api/user/profile/create
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM5MDU4MjAwLCJleHAiOjE2MzkxNDQ2MDB9.gmYc3MBbb12wOoiPUYeuFgxsY7cewO4BKWmAnqdxtIA
+
+{
+   "lastName": "Jane",
+   "firstName": "Doe",
+   "gender": "female",
+   "phone": ""
+}
+
+
+###
+post http://localhost:5000/api/user/profile/update
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM5MDU4MjAwLCJleHAiOjE2MzkxNDQ2MDB9.gmYc3MBbb12wOoiPUYeuFgxsY7cewO4BKWmAnqdxtIA
+
+{
+   "lastName": "Jane A.",
+   "firstName": "Doe",
+   "gender": "female",
+   "phone": "",
+   "country": "Ghana",
+   "dob": "12-01-2021"
+}
+
+
+###
+get http://localhost:5000/api/user/me
+Authorization: Token 
+
+
+
+###
+get http://localhost:5000/api/user?page=1&page_size=2
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM5MDU4MjAwLCJleHAiOjE2MzkxNDQ2MDB9.gmYc3MBbb12wOoiPUYeuFgxsY7cewO4BKWmAnqdxtIA
